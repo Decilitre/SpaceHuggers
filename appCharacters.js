@@ -8,7 +8,7 @@
 
 const aiEnable = 1;
 const debugAI = 0;
-const maxCharacterSpeed = .2;
+const maxCharacterSpeed = .3;
 
 class Character extends GameObject 
 {
@@ -102,7 +102,7 @@ class Character extends GameObject
             if (this.groundObject || this.climbingWall)
                 this.groundTimer.set(.1);
 
-            if (this.groundTimer.active() && !this.dodgeTimer.active())
+            if (!this.dodgeTimer.active())
             {
                 // is on ground
                 if (this.pressedJumpTimer.active() 
@@ -187,7 +187,7 @@ class Character extends GameObject
             if (this.grenadeCount > 0 && this.pressingThrow && !this.wasPressingThrow && !this.grendeThrowTimer.active())
             {
                 // throw greande
-                --this.grenadeCount;
+                
                 const grenade = new Grenade(this.pos);
                 grenade.velocity = this.velocity.add(vec2(this.getMirrorSign(),rand(.8,.7)).normalize(.25+rand(.02)));
                 grenade.angleVelocity = this.getMirrorSign() * rand(.8,.5);
