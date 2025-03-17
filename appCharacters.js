@@ -192,7 +192,7 @@ class Character extends GameObject
                 grenade.velocity = this.velocity.add(vec2(this.getMirrorSign(),rand(.8,.7)).normalize(.25+rand(.02)));
                 grenade.angleVelocity = this.getMirrorSign() * rand(.8,.5);
                 playSound(sound_jump, this.pos);
-                this.grendeThrowTimer.set(1);
+                this.grendeThrowTimer.set(0);
             }
             this.wasPressingThrow = this.pressingThrow;
         }
