@@ -184,7 +184,7 @@ class Character extends GameObject
         this.weapon.triggerIsDown = this.holdingShoot && !this.dodgeTimer.active();
         if (!this.dodgeTimer.active())
         {
-            if (this.grenadeCount > 0 && this.pressingThrow && !this.wasPressingThrow && !this.grendeThrowTimer.active())
+            if (this.grenadeCount > 0 && this.pressingThrow && !this.grendeThrowTimer.active())
             {
                 // throw greande
                 
