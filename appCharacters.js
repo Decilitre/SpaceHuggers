@@ -117,7 +117,7 @@ class Character extends GameObject
                     else
                     {
                         this.velocity.y = .15;
-                        this.jumpTimer.set(.2);
+                        this.jumpTimer.set(0);
                     }
                     this.preventJumpTimer.set(0);
                     playSound(sound_jump, this.pos);
